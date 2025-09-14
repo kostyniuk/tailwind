@@ -10,7 +10,14 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-2 bg-custom-color">
           <h1 className="text-4xl font-bold p-4">Usage of custom sizing 2</h1>
-
+          <div className="min-h-screen bg-green-100">
+          <p className="p-large">Lots of content ... only this box scrolls ...</p>
+          <p className="p-extra-large">The rest of the page stays fixed</p>
+          </div>
+          <div className="h-screen overflow-y-auto bg-blue-100">
+            <p className="p-large">Lots of content ... only this box scrolls ...</p>
+            <p className="p-extra-large">The rest of the page stays fixed</p>
+          </div>
           </div>
         </div>
         <h1 className="text-4xl font-bold p-large">Hello World</h1>
