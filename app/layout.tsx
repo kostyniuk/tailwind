@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Link from "next/link";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -27,7 +28,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className="flex flex-col gap-4 p-4 w-full bg-custom-color">
+          <nav>
+            <ul className="flex flex-col gap-2 w-[300px]">
+              <li><Link href="/nested-server-comp" className="block border border-foreground px-4 py-2 rounded hover:bg-foreground hover:text-background transition-colors">Nested Server Component</Link></li>
+              <li><Link href="/middleware-test" className="block border border-foreground px-4 py-2 rounded hover:bg-foreground hover:text-background transition-colors">Middleware Test</Link></li>
+              <li><Link href="/" className="block border border-foreground px-4 py-2 rounded hover:bg-foreground hover:text-background transition-colors">Home</Link></li>
+            </ul>
+          </nav>
+        </div>
+        <div className="flex flex-col gap-4 p-4 w-full bg-custom-color">
+          {children}
+        </div>
       </body>
     </html>
   );
